@@ -1,0 +1,26 @@
+info:
+  application:
+    # read from pom.xml
+    name: '@name@'
+    description: '@description@'
+    version: '@version@'
+    build-time: '@maven.build.timestamp@'
+
+server:
+  port: 1918
+
+spring:
+
+  application:
+    name: ${info.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, heapdump, threaddump
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
