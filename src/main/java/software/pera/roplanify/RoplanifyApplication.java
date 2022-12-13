@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RoplanifyApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RoplanifyApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RoplanifyApplication.class, args);
+    }
 
 }
