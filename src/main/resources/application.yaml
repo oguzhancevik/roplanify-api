@@ -24,3 +24,7 @@ management:
       enabled: true
     java:
       enabled: true
+
+google:
+  cloud:
+    api-key: ${GOOGLE_CLOUD_API_KEY}
