@@ -6,9 +6,6 @@ info:
     version: '@version@'
     build-time: '@maven.build.timestamp@'
 
-server:
-  port: 1918
-
 spring:
 
   application:
