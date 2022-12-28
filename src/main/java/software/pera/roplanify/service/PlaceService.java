@@ -32,7 +32,14 @@ public class PlaceService {
 
         for (AutocompletePrediction autocompletePrediction : autocompletePredictionResponse) {
             PlaceDetails placeDetails = PlacesApi.placeDetails(context, autocompletePrediction.placeId).await();
-            PlaceResponse place = new PlaceResponse(placeDetails.placeId, placeDetails.name, placeDetails.geometry.location);
+
+            PlaceResponse place = PlaceResponse.builder()
+                    .id(placeDetails.placeId)
+                    .name(placeDetails.name)
+                    .formattedAddress(placeDetails.formattedAddress)
+                    .latLng(placeDetails.geometry.location)
+                    .build();
+
             response.add(place);
         }
 
