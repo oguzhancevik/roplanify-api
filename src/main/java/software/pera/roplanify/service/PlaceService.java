@@ -21,6 +21,8 @@ public class PlaceService {
     @Value("${google.cloud.api-key}")
     String googleCloudApiKey;
 
+    String defaultLanguageCode = "TR";
+
     public List<PlaceResponse> search(String input) throws IOException, InterruptedException, ApiException {
         GeoApiContext context = new GeoApiContext.Builder()
                 .apiKey(googleCloudApiKey)
@@ -31,7 +33,9 @@ public class PlaceService {
         List<PlaceResponse> response = new ArrayList<>();
 
         for (AutocompletePrediction autocompletePrediction : autocompletePredictionResponse) {
-            PlaceDetails placeDetails = PlacesApi.placeDetails(context, autocompletePrediction.placeId).await();
+            PlaceDetails placeDetails = PlacesApi.placeDetails(context, autocompletePrediction.placeId)
+                    .language(defaultLanguageCode)
+                    .await();
 
             PlaceResponse place = PlaceResponse.builder()
                     .id(placeDetails.placeId)
