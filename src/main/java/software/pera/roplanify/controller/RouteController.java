@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import software.pera.roplanify.model.OptimizeRouteRequest;
-import software.pera.roplanify.model.OptimizeRouteResponse;
+import software.pera.roplanify.model.PlaceResponse;
 import software.pera.roplanify.service.RouteService;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/route")
@@ -25,8 +26,8 @@ public class RouteController {
     private final RouteService routeService;
 
     @PostMapping("/optimize")
-    public ResponseEntity<OptimizeRouteResponse> optimizeRoute(@Valid @NotNull @RequestBody OptimizeRouteRequest request) throws IOException, InterruptedException, ApiException {
-        OptimizeRouteResponse response = routeService.optimizeRoute(request);
+    public ResponseEntity<List<PlaceResponse>> optimizeRoute(@Valid @NotNull @RequestBody OptimizeRouteRequest request) throws IOException, InterruptedException, ApiException {
+        List<PlaceResponse> response = routeService.optimizeRoute(request);
         return ResponseEntity.ok(response);
     }
 
