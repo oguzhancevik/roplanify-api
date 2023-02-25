@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import software.pera.roplanify.model.OptimizeRouteRequest;
-import software.pera.roplanify.model.PlaceResponse;
+import software.pera.roplanify.model.dto.OptimizeRouteRequest;
+import software.pera.roplanify.model.dto.PlaceResponse;
 import software.pera.roplanify.service.RouteService;
 
 import java.io.IOException;

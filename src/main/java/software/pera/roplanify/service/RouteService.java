@@ -10,8 +10,8 @@ import com.google.maps.model.PlaceDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import software.pera.roplanify.model.OptimizeRouteRequest;
-import software.pera.roplanify.model.PlaceResponse;
+import software.pera.roplanify.model.dto.OptimizeRouteRequest;
+import software.pera.roplanify.model.dto.PlaceResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
