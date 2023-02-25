@@ -1,4 +1,4 @@
-package software.pera.roplanify.model;
+package software.pera.roplanify.model.dto;
 
 import com.google.maps.model.LatLng;
 import com.google.maps.model.TravelMode;

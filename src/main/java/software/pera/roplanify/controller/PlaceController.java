@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import software.pera.roplanify.model.PlaceResponse;
+import software.pera.roplanify.model.dto.PlaceResponse;
 import software.pera.roplanify.service.PlaceService;
 
 import java.io.IOException;
